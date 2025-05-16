@@ -524,7 +524,9 @@ return [
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src
         'frame-src' => [
             'allow' => [
-                'https://e.widgetbot.io/'
+                'https://e.widgetbot.io/',
+	            'https://www.youtube-nocookie.com/',
+	            'https://youtu.be/',
             ],  
         ],
 
