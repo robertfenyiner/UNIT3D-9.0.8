@@ -129,6 +129,11 @@ return [
     'invite_groups'     => [
         'Administrator',
         'Owner',
+        'InsaneUser',
+	    'Veteran',
+	    'Seeder',
+	    'Archivist',
+	    'VIP',
     ],
     'max_unused_user_invites' => 1,
 
