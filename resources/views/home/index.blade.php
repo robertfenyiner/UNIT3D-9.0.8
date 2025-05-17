@@ -13,11 +13,11 @@
 
     @include('blocks.featured')
     @livewire('random-media')
-    @include('blocks.poll')
+    {{--@include('blocks.poll')--}}
     @livewire('top-torrents')
     @livewire('top-users')
     @include('blocks.latest-topics')
-    @include('blocks.latest-posts')
-    @include('blocks.latest-comments')
+    {{--@include('blocks.latest-posts')--}}
+    {{--@include('blocks.latest-comments')--}}
     @include('blocks.online')
 @endsection
