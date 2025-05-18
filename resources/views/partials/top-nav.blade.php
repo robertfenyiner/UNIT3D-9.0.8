@@ -215,7 +215,7 @@
                             class="{{ $donationPercentage < 100 ? 'fa-fade' : '' }}"
                             style="color: lightcoral"
                         >
-                            Donate
+                            Apoya A Lat-Team
                         </span>
                         <div class="progress" style="background-color: slategray">
                             <div
