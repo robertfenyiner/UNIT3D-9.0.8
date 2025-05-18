@@ -25,12 +25,14 @@
                         {{ __('torrent.torrents') }}
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="{{ route('torrents.pending') }}">
                         <i class="{{ config('other.font-awesome') }} fa-hourglass-half"></i>
                         {{ __('common.pending-torrents') }}
                     </a>
                 </li>
+                -->
                 <li>
                     <a href="{{ route('torrents.create') }}">
                         <i class="{{ config('other.font-awesome') }} fa-upload"></i>
