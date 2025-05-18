@@ -66,7 +66,7 @@ return [
     | Date Site Was Born
     |
     */
-    'birthdate' => 'January 20th 2020',
+    'birthdate' => 'February 2 2021',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +135,7 @@ return [
 	    'Archivist',
 	    'VIP',
     ],
-    'max_unused_user_invites' => 1,
+    'max_unused_user_invites' => 10,
 
     /*
     |--------------------------------------------------------------------------
