@@ -238,14 +238,14 @@
                     <li>
                         <a href="{{ route('donations.index') }}">
                             <i class="fas fa-display-chart-up-circle-dollar"></i>
-                            Support {{ config('other.title') }} ({{ $donationPercentage }}%)
+                            Donaciones {{ config('other.title') }} ({{ $donationPercentage }}%)
                         </a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="https://square.link/u/VjB1CNfm" target="_blank">
                             <i class="fas fa-handshake"></i>
                             Support UNIT3D
-                        </a>
+                        </a>-->
                     </li>
                 </ul>
             </li>
