@@ -51,11 +51,11 @@ class StoreApplicationRequest extends FormRequest
                 'required',
                 'min:1',
                 'max:100',
-                'list',
+                //'list',
             ],
             'images.*' => [
                 'required',
-                'array:image',
+                //'array:image',
             ],
             'images.*.image' => [
                 'filled',
@@ -66,11 +66,11 @@ class StoreApplicationRequest extends FormRequest
                 'required',
                 'min:1',
                 'max:100',
-                'list',
+                //'list',
             ],
             'links.*' => [
                 'required',
-                'array:url',
+                //'array:url',
             ],
             'links.*.url' => [
                 'filled',
