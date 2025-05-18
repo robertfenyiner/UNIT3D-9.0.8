@@ -151,7 +151,7 @@
                     <enclosure
                             url="{{ route('torrent.download.rsskey', ['id' => $torrent['id'], 'rsskey' => $user->rsskey ]) }}"
                             type="application/x-bittorrent"
-                            length="39399"
+                            length="{{ $torrent['size'] }}"
                     />
 
 
