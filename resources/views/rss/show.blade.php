@@ -25,10 +25,10 @@
 
                 @php
                         $meta = match (true) {
-                            $torrent['category']['tv_meta'] => App\Models\Tv::query()
+                            $torrent['category']['tv_meta'] => App\Models\TmdbTv::query()
                                 ->with('genres', 'networks', 'seasons')
                                 ->find($torrent['tmdb'] ?? 0),
-                            $torrent['category']['movie_meta'] => App\Models\Movie::query()
+                            $torrent['category']['movie_meta'] => App\Models\TmdbMovie::query()
                                 ->with('genres', 'companies', 'collection')
                                 ->find($torrent['tmdb'] ?? 0),                            
                             default => null,
