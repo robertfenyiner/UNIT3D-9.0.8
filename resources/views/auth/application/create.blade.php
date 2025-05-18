@@ -1,4 +1,3 @@
-<?php
 <!DOCTYPE html>
 <html class="no-js" lang="{{ config('app.locale') }}">
     <head>
@@ -102,21 +101,21 @@
                             ></textarea>
                         </p>
                         <label class="auth-form__label">Proofs</label>
-                        <div x-for="index in proofs" :key="index">
+                        <template x-for="proof in proofs">
                             <fieldset class="auth-form__fieldset">
                                 <legend
                                     class="auth-form__legend"
-                                    x-text="'Proof ' + index"
+                                    x-text="'Proof ' + proof"
                                 ></legend>
                                 <p class="auth-form__text-input-group">
-                                    <label class="auth-form__label" :for="'image' + index">
+                                <label class="auth-form__label" x-bind:for="'image' + proof">
                                         {{ __('auth.proof-image') }}
                                     </label>
                                     <input
-                                        :id="'image' + index"
-                                        class="auth-form__text-input"
-                                        :name="'images[' + (index-1) + '][image]'"
-                                        type="url"
+                                    x-bind:id="'image' + proof"
+                                    class="auth-form__text-input"
+                                    x-bind:name="'images[' + proof + '][image]'"
+                                    type="url"
                                         placeholder=" "
                                         required
                                     />
@@ -124,20 +123,20 @@
                                 <p class="auth-form__text-input-group">
                                     <label
                                         class="auth-form__label"
-                                        :for="'profile' + index"
+                                        x-bind:for="'profile' + proof"
                                     >
                                         {{ __('auth.proof-profile') }}
                                     </label>
                                     <input
-                                        :id="'profile' + index"
-                                        class="auth-form__text-input"
-                                        :name="'links[' + (index-1) + '][url]'"
-                                        type="url"
+                                    x-bind:id="'profile' + proof"
+                                    class="auth-form__text-input"
+                                    x-bind:name="'links[' + proof + '][url]'"
+                                    type="url"
                                         placeholder=" "
                                     />
                                 </p>
                             </fieldset>
-                        </div>
+                        </template>
                         <p class="auth-form__button-container">
                             <button
                                 x-on:click.prevent="proofs++"
@@ -158,17 +157,20 @@
                             @hiddencaptcha
                         @endif
 
+
+
                         <!--<button class="auth-form__primary-button">{{ __('auth.apply') }}</button>-->
 
+
                         <div class="auth-form__button-container">
-                            <button class="auth-form__primary-button">APLICAR</button>
-                            @if (Session::has('errors'))
-                                <ul class="auth-form__errors">
-                                    @foreach ($errors->all() as $error)
-                                        <li class="auth-form__error">{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            @endif
+                        <button class="auth-form__primary-button">APLICAR</button>
+                        @if (Session::has('errors'))
+                            <ul class="auth-form__errors">
+                                @foreach ($errors->all() as $error)
+                                    <li class="auth-form__error">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                         </div>
 
                     @else
@@ -179,9 +181,9 @@
                     @endif
                 </form>
                 <div class="discord-div">
-                    <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
-                        <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
-                    </a>
+                <a class="discord-widget" href="https://discord.gg/RUKj5JfEST" title="Join us on Discord">
+                <img src="https://discordapp.com/api/guilds/838217297478680596/embed.png?style=banner3">
+                </a>
                 </div>
             </section>
         </main>
