@@ -185,7 +185,7 @@ return [
     | True/1 = Enabled
     | False/0 = Disabled
     */
-    'application_signups' => false,
+    'application_signups' => true,
 
     /*
     |--------------------------------------------------------------------------
