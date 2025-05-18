@@ -102,11 +102,11 @@
                             ></textarea>
                         </p>
                         <label class="auth-form__label">Proofs</label>
-                        <template x-for="(proof, index) in proofs" :key="index">
+                        <div x-for="index in proofs" :key="index">
                             <fieldset class="auth-form__fieldset">
                                 <legend
                                     class="auth-form__legend"
-                                    x-text="'Proof ' + (index + 1)"
+                                    x-text="'Proof ' + index"
                                 ></legend>
                                 <p class="auth-form__text-input-group">
                                     <label class="auth-form__label" :for="'image' + index">
@@ -115,7 +115,7 @@
                                     <input
                                         :id="'image' + index"
                                         class="auth-form__text-input"
-                                        :name="'images[' + index + '][image]'"
+                                        :name="'images[' + (index-1) + '][image]'"
                                         type="url"
                                         placeholder=" "
                                         required
@@ -131,13 +131,13 @@
                                     <input
                                         :id="'profile' + index"
                                         class="auth-form__text-input"
-                                        :name="'links[' + index + '][url]'"
+                                        :name="'links[' + (index-1) + '][url]'"
                                         type="url"
                                         placeholder=" "
                                     />
                                 </p>
                             </fieldset>
-                        </template>
+                        </div>
                         <p class="auth-form__button-container">
                             <button
                                 x-on:click.prevent="proofs++"
