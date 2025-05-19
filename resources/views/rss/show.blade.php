@@ -1,7 +1,6 @@
 @php
     echo '<?xml version="1.0" encoding="UTF-8" ?>';
-    $poster='';
-@endphp
+   @endphp
 <rss version="2.0"
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -56,17 +55,29 @@
                            @endif
                     </imdb>
                     <poster>
-				@php
-				$poster='https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
-				if ($torrent['category']['movie_meta'] && $torrent['tmdb_movie_id'] != 0)
-					$poster = tmdb_image('poster_big', $meta->poster);
-				if ($torrent['category']['tv_meta'] && $torrent['tmdb_tv_id'] != 0)
-                                	$poster = tmdb_image('poster_big', $meta->poster);
-				if (!$torrent['category']['tv_meta'] && !$torrent['category']['movie_meta'] )
-					if(file_exists(public_path().'/files/img/torrent-cover_' . $torrent['id'] . '.jpg'))
-						$poster = url('files/img/torrent-cover_' . $torrent['id'] . '.jpg');
-				@endphp
-				{{$poster}}
+
+
+
+
+    @php
+        $poster = 'https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg';
+        if ($torrent['category']['movie_meta'] && $torrent['tmdb_movie_id'] > 0 && $meta && $meta->poster) {
+            $poster = tmdb_image('poster_big', $meta->poster);
+        }
+        if ($torrent['category']['tv_meta'] && $torrent['tmdb_tv_id'] > 0 && $meta && $meta->poster) {
+            $poster = tmdb_image('poster_big', $meta->poster);
+        }
+        if (!$torrent['category']['tv_meta'] && !$torrent['category']['movie_meta']) {
+            if (file_exists(public_path().'/files/img/torrent-cover_' . $torrent['id'] . '.jpg')) {
+                $poster = url('files/img/torrent-cover_' . $torrent['id'] . '.jpg');
+            }
+        }
+    @endphp
+    {{$poster}}
+
+
+
+
 		    </poster>
                     
                     <tmdb>@if ($torrent['category']['movie_meta'] && $torrent['tmdb_movie_id'] != 0)
