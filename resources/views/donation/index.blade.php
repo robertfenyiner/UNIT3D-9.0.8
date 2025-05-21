@@ -182,6 +182,9 @@
                     <span class="text-warning">
                         * Las Activaciones Pueden tardar Hasta 24 Horas (tratamos De No Demorar Tanto).
                     </span>
+                   <span class="text-warning">
+                        * Luego de realizar tu donacion llena el siguiente formulario para que el staff revise y te otorgue los beneficios. <a href="https://forms.gle/NiPv8XbhqwPxYiTP7">Formulario</a>
+                    </span>
                     <p class="form__group">
                         <input type="hidden" name="package_id" value="{{ $package->id }}" />
                         <button class="form__button form__button--filled">Activar Plan</button>
